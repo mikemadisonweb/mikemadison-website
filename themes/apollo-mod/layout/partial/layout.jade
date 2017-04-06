@@ -7,7 +7,9 @@ html(lang=config.language)
             header
                 a.logo-link(href=url_for())
                     img(src=url_for(theme.logo) alt="logo")
-                    h1.logo-text // #{config.title}
+                    h1.logo-text
+                        span.logo-slashes // todo():
+                        span redo
                 include nav
             main.container
                 block container

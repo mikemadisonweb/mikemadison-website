@@ -1,6 +1,7 @@
 ---
 title: Import XML file into PostgreSQL
 date: 2017-01-08
+featured_image: xml-import.jpeg
 ---
 I will not talk about whether it's a good idea or not to store dump in XML, let's suppose you have this huge XML file and you need to load it in your database. In fact the bigger the file is the more problem you have, because you need to think about import performance and memory consumption. Also the schema of the data inside your dump may be messy or totally irrational. All this determines the required flexibility of your import method.
 

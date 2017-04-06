@@ -6,7 +6,11 @@
     .post-title {
         margin: 0.65em 0;
         color: #2c3e50;
-        font-size: 1.9em;
+        font-size: 1.8em;
+
+        .pre-title {
+            color: #93a29b;
+        }
     }
 
     .post-info {
@@ -29,7 +33,7 @@
 .post-content {
     h2, h3, h4, h5, h6 {
         position: relative;
-        margin: 1em 0;
+        margin: 1em 0 1em 0.8em;
         a:before {
             content: "#";
             color: #36B548;

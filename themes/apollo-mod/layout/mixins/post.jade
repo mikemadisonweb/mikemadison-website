@@ -2,7 +2,7 @@ mixin postInfo(item)
     .post-info
         != full_date(item.date, 'll')
         if item.from && (is_home() || is_post())
-            a.post-from(href=item.from target="_blank" title=item.from) 翻译 · 原文地址
+            a.post-from(href=item.from target="_blank" title=item.from) eto chto · kuda to
 
 //- Index Page
 mixin posts()
@@ -39,8 +39,12 @@ mixin postList()
 //- Post Page
 mixin post(item)
     .post
+        - if (typeof(item.featured_image) !== 'undefined'){
+        img.post-img(src= item.featured_image)
+        -}
         article.post-block
-            h1.post-title todo():&nbsp;
+            h1.post-title
+                span.pre-title //&nbsp;todo():&nbsp;
                 != item.title
             +postInfo(item)
             .post-content
