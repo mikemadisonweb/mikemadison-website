@@ -1,0 +1,27 @@
+header {
+    min-height: 60px;
+
+    .logo-link img {
+        float: left;
+    }
+
+    .logo-text {
+        display: inline;
+        line-height: 120px;
+        color: #36B548;
+    }
+    
+    .nav {
+        float: right;
+        left: 80px;
+    }
+
+    .nav-list-item {
+        display: inline-block;
+        padding: 19px  10px ;
+        a {
+            font-size: 1.125em;
+            line-height: 1.4;
+        }
+    }
+}
