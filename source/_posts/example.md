@@ -1,5 +1,6 @@
 ---
 title: Example
+date: 2017-01-05
 ---
 
 # An exhibit of Markdown
