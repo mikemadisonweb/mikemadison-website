@@ -38,10 +38,11 @@ mixin postList()
 
 //- Post Page
 mixin post(item)
-    .post
+    div.post-img-container
         - if (typeof(item.featured_image) !== 'undefined'){
         img.post-img(src= item.featured_image)
         -}
+    div.post
         article.post-block
             h1.post-title
                 span.pre-title //&nbsp;todo():&nbsp;
