@@ -5,19 +5,11 @@
 .post-img-container {
     height: 400px;
     position: relative;
+    overflow: hidden;
 }
 
 .post-img {
-    max-height: 100%;
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    width: 100%;
 }
 
 .post-block {
@@ -31,19 +23,31 @@
         }
     }
 
-    .post-info {
+    .post-date {
         color: #7f8c8d;
         margin: 1.2em 0;
+
         span {
             margin-left: 0.5rem;
         }
-        a.post-from {
-            margin-left: 0.5rem;
-            padding: 3px 6px;
-            border-radius: 5px;
-            font-size: 12px;
-            color: white;
-            background-color: #E36B6B;
+    }
+}
+
+.post-tags {
+    .post-tag {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 4px;
+        border-bottom: 4px solid #3c8260;
+        font-size: 1em;
+        color: #fff;
+        background-color: #6aa573;
+        margin: 0 5px 0.65em;
+        &:first-of-type {
+            margin-left: 0;
+        }
+        &:hover {
+            background-color: #7fbd88;
         }
     }
 }

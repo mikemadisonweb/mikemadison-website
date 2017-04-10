@@ -3,7 +3,7 @@ html(lang=config.language)
     head
         include head
     body
-        .wrap
+        .fixed-width
             header
                 a.logo-link(href=url_for())
                     img(src=url_for(theme.logo) alt="logo")
@@ -11,8 +11,9 @@ html(lang=config.language)
                         span.logo-slashes // todo():
                         span redo
                 include nav
-            main.container
-                block container
+        main.container
+            block container
+        .fixed-width
             footer
                 block pagination
                 block copyright

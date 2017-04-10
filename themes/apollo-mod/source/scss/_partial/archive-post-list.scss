@@ -1,26 +1,39 @@
 .archive {
-    max-width: 500px;
-    margin: 5em auto;
+    max-width: 1250px;
+    margin: 0 auto;
+
     .post-item {
         padding: 2px 0 0 50px;
+        vertical-align: text-top;
     }
     .post-time,
     .post-title-link {
-        font-size: 1rem;
+        font-size: 0.9em;
     }
     .post-title-link {
-        display: block;
-        margin-left: 125px;
-        color: #36B548;
-        word-break: break-all;
-        &:hover {
-            border-bottom: 0;
-            color: #267B54;
+        margin-bottom: 30px;
+        display: inline-block;
+        width: calc(100% - 115px);
+
+        a {
+            color: #36B548;
         }
     }
-    .post-info {
-        float: left;
-        width: 125px;
+    .post-date {
+        display: inline-block;
+        width: 115px;
         color: #7f8c8d;
+        font-size: 0.9em;
+        vertical-align: top;
+    }
+
+    .post-tags {
+        vertical-align: text-bottom;
+
+        .post-tag {
+            color: #FFF;
+            padding: 2px 8px;
+            font-size: 0.6em;
+        }
     }
 }

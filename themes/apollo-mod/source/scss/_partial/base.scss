@@ -16,8 +16,8 @@ body {
     background-color: #fff;
     font-family: 'sourcesanspro', 'Helvetica Neue', Arial, sans-serif;
 
-    .wrap {
-        max-width: 1300px;
+    .fixed-width {
+        max-width: 1250px;
     }
 }
 
@@ -80,4 +80,12 @@ table {
             vertical-align: text-top;
         }
     }
+}
+
+figure.highlight {
+    min-height: 60px;
+}
+
+.rss-icon {
+  margin-bottom: -2px;
 }

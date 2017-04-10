@@ -1,16 +1,21 @@
 @media screen and (min-width: 700px) {
-    .wrap {
+    .fixed-width {
         margin: 0 auto;
-        padding: 0 150px;
+        padding: 0 15px;
     }
     header {
-        padding: 20px;
+        padding: 20px 0;
     }
 }
 
 @media screen and (max-width: 700px) {
-    .wrap {
+    .fixed-width {
         width: 100%;
+    }
+    .container {
+        .post-img-container {
+            height: inherit;
+        }
     }
     header {
         padding: 20px 0;
@@ -29,8 +34,7 @@
     .archive {
         margin-top: 0;
     }
-    main.container
-    {
+    main.container {
         padding: 0 20px;
     }
     .archive .post-item {
@@ -45,5 +49,11 @@
     .ds-thread,
     #disqus_thread {
         margin: 2em 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        font-size: 18px;
     }
 }

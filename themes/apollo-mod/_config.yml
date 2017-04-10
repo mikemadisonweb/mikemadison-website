@@ -1,8 +1,7 @@
 menu:
     Blog: /
     Archive: /archives/
-    GitHub: https://github.com/mikemadisonweb
-    About: /atom.xml
+    About: https://github.com/mikemadisonweb
 
 favicon: /favicon_tree.png
 logo: /favicon_tree.png
@@ -13,7 +12,7 @@ duoshuo:
 
 # Analytics
 # google-analytics:
-ga: UA-65933410-1
+ga: ~
 
 # Copyright Infomation
-startyear: 2015
+startyear: 2016

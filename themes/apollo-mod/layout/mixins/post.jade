@@ -1,39 +1,55 @@
-mixin postInfo(item)
-    .post-info
+mixin postTags(item)
+    - if (typeof(item.tags) !== 'undefined'){
+        .post-tags
+            - item.tags.each(function (tag) {
+                a.post-tag(href= url_for(tag.path))
+                    != tag.name
+            - })
+    -}
+
+mixin postDate(item)
+    .post-date
         != full_date(item.date, 'll')
-        if item.from && (is_home() || is_post())
-            a.post-from(href=item.from target="_blank" title=item.from) eto chto · kuda to
 
 //- Index Page
 mixin posts()
-    ul.home.post-list
-        - page.posts.each(function (item) {
-            li.post-list-item
-                article.post-block
-                    h2.post-title
-                        a.post-title-link(href= url_for(item.path))
-                            != item.title
-                    +postInfo(item)
-                    .post-content
-                        != item.excerpt
-                    a.read-more(href= url_for(item.path))!= __('more')
-        - })
+    div.fixed-width
+        ul.home.post-list
+            - page.posts.each(function (item) {
+                li.post-list-item
+                    article.post-block
+                        h2.post-title
+                            a.post-title-link(href= url_for(item.path))
+                                != item.title
+                        +postTags(item)
+                        +postDate(item)
+                        .post-content
+                            != item.excerpt
+                        a.read-more(href= url_for(item.path))!= __('more')
+            - })
 
 //- Archive Page
 mixin postList()
     .archive
-        - var year = 0;
+        - var year = new Date().getFullYear();
         - var change = false;
+        h1.archive-title
+            - if (typeof(page.tag) !== 'undefined') {
+            | Posts tagged with ##{page.tag}
+            -} else {
+            | Archive
+            -}
         - page.posts.each(function (item) {
             - var itemYear = date(item.date, 'YYYY') - 0;
             - change = year !== itemYear;
-            - year = change ? itemYear : year;
-            if change 
+            if change
                 h2.archive-year!= year
             .post-item
-                +postInfo(item)
-                a.post-title-link(href= url_for(item.path))
-                    != item.title
+                +postDate(item)
+                .post-title-link
+                    a(href= url_for(item.path))
+                        != item.title
+                    +postTags(item)
         - })
 
 //- Post Page
@@ -42,11 +58,13 @@ mixin post(item)
         - if (typeof(item.featured_image) !== 'undefined'){
         img.post-img(src= item.featured_image)
         -}
-    div.post
-        article.post-block
-            h1.post-title
-                span.pre-title //&nbsp;todo():&nbsp;
-                != item.title
-            +postInfo(item)
-            .post-content
-                != item.content
+    div.fixed-width
+        div.post
+            article.post-block
+                h1.post-title
+                    span.pre-title //&nbsp;todo():&nbsp;
+                    != item.title
+                +postTags(item)
+                +postDate(item)
+                .post-content
+                    != item.content
