@@ -9,9 +9,9 @@ tags:
 - MySQL
 - SQL
 ---
-I will not talk about whether it's a good idea or not to store dump in XML, let's suppose you have this huge XML file and you need to load it in your database. In fact the bigger the file is the more problem you have, because you need to think about import performance and memory consumption. Also the schema of the data inside your dump may be messy or totally irrational. All this determines the required flexibility of your import method.
+I will not talk about whether it's a good idea or not to store dump in XML, let's suppose you have this huge XML file and you need to load it in your database. In fact the bigger the file is the more problem you have because you need to think about import performance and memory consumption. Also, the schema of the data inside your dump may be messy or totally irrational. All this determines the required flexibility of your import method.
 
-For the sake of this article i will use [stackoverflow comments dump](https://archive.org/download/stackexchange) which is nearly 10Gb after unpack.
+For the sake of this article, I will use [stackoverflow comments dump](https://archive.org/download/stackexchange) which is nearly 10Gb after unpacking.
 ```sql
 CREATE TABLE IF NOT EXISTS comments (
   "Id" serial PRIMARY KEY,
@@ -29,14 +29,14 @@ To demonstrate how easy this stuff can be, let's look at how MySQL handles that 
 ```sql
 LOAD XML LOCAL INFILE '/var/lib/mysql/dump/Comments.xml' INTO TABLE comments ROWS IDENTIFIED BY '<row>';
 ```
-Mysql solution is short and simple, but it works only on version >=5.5.  Column names associated with either node attributes or `field` nodes with required `name` attribute. In the last case value for particular column will be taken from node text. If you are interested you can find more about it in [official Mysql docs](https://dev.mysql.com/doc/refman/5.5/en/load-xml.html).
+The Mysql solution is short and simple, but it works only on version >=5.5.  Column names associated with either node attributes or `field` nodes with required `name` attribute. In the last case value for the particular column will be taken from node text. If you are interested you can find more about it in [official Mysql docs](https://dev.mysql.com/doc/refman/5.5/en/load-xml.html).
 
 Import took just about 2 hours for our test XML dump.
 
 Simplicity in MySQL came with a price, as it's kind of limited in allowed XML formatting. That's can be a huge problem for example if you import relational data.
 
 ### XML processing functions in PostgreSQL
-I decided to put MySQL example here for a reason. Not that MySQL lacks of XML processing, it's PostgreSQL that don't have such a simple solution. Postgres have advanced functionality and that usually leads to overcomplicated solutions. When i was searching for a way to do XML import i stumbled upon [this stackoverflow answer](http://stackoverflow.com/a/7628453) which give me a hint on how to solve my problem, but introduced a lot of custom user functions, which wasn't necessary. I ended up with this:
+I decided to put MySQL example here for a reason. Not that MySQL lacks XML processing, it's PostgreSQL that don't have such a simple solution. Postgres have advanced functionality and that usually leads to overcomplicated solutions. When I was searching for a way to do XML import I stumbled upon [this stackoverflow answer](http://stackoverflow.com/a/7628453) which give me a hint on how to solve my problem but introduced a lot of custom user functions, which wasn't necessary. I ended up with this:
 ```sql
 INSERT INTO comments
   SELECT (xpath('//row/@Id', x))[1]::text::int AS Id,
@@ -52,12 +52,12 @@ XPath provide a lot of flexibility, this time we are not limited with specific X
 - As you can see XML field type can't be directly converted to integer. You need a intermediate conversion to text.
 - Your dump shoudn't have BOM. You should [remove it](http://www.linuxask.com/questions/how-to-remove-bom-from-utf-8) before running import otherwise you'll receive an error.
 
-Import on 10GB dump took minutes and basically loads whole file into memory in order to work.
+Import on 10GB dump took minutes and basically loads the whole file into memory in order to work.
 
 ### Import using Python
-Basically until now we either had formatting restrictions either getting run out of memory pretty fast. The key in succeeding controlling the whole process is to write your own external script. Obviously you can't beat above solutions in execution time, but you definitely can reduce memory consumption. 
+Basically, until now we either had formatting restrictions either getting run out of memory pretty fast. The key in succeeding controlling the whole process is to write your own external script. Obviously, you can't beat above solutions in execution time, but you definitely can reduce memory consumption. 
 
-I used Python 3, lxml module to process dump and psycopg2 for database connection. With my naive approach at first i got really slow performance, some major improvements were needed. To save you time i will post my final solution and then point out the most important parts:
+I used Python 3, lxml module to process dump and psycopg2 for the database connection. With my naive approach at first I got really slow performance, some major improvements were needed. To save you time I will post my final solution and then point out the most important parts:
 ```python
 from lxml import etree
 import psycopg2
@@ -122,7 +122,7 @@ if __name__ == '__main__':
     import_dump()
 ```
 - `etree.iterparse` returns iterator providing (event, element) pairs. In contrast with `etree.parse` iterator provide a way to save memory, you just need to remove previously parsed nodes which you don't need anymore.
-- Batch insert is much faster then separate insert for each record. You can tweak `batch_size` property in order to locate a sweet spot in performance.
-- psutil module is not required, it's just to visualise script memory consumption.
+- Batch insert is much faster than separate insert for each record. You can tweak `batch_size` property in order to locate a sweet spot in performance.
+- psutil module is not required, it's just to visualize script memory consumption.
 
-All in all it took -- minutes to import 10Gb of stackoverflow comments and used 25Mb of RAM only.
+All in all, it took -- minutes to import 10Gb of stackoverflow comments and used 25Mb of RAM only.
