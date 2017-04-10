@@ -5,8 +5,14 @@ title
     block site_title
         = config.title
 block description
-    meta(name="description", content= config.description ? config.description : 'A Blog Powered By Hexo')
-
+    meta(name="description", content= config.description ? config.description : '')
+    meta(property="og:description" content="This is my blog about web development. Please leave a comment or check out RSS feed.")
+    meta(property="og:image" content="")
+    meta(property="og:title" content="Blog about web development | Mikhail Bakulin")
+    meta(property="og:type" content="website")
+    meta(property="og:url" content="http://mikemadison.site")
+    meta(name="twitter:site" content="@mikemadweb")
+    meta(name="twitter:creator" content="@mikemadweb")
 meta(name="viewport", content="width=device-width, initial-scale=1")
 link(rel="icon", href=url_for(theme.favicon))
 link(rel="stylesheet", href=url_for("css/apollo.css"))

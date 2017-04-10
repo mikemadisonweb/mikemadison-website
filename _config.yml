@@ -11,15 +11,15 @@ archive_generator:
     daily: false
 
 # Site
-title: 'todo(): redo'
+title: "todo(): redo · Mikhail Bakulin's blog"
 subtitle: blog
-description:
+description: Mikhail Bakulin's blog | This is my blog about web development. Please leave a comment or check out RSS feed.
 author: Mikhail Bakulin
 language: en
 timezone: Europe/Moscow
 
 # URL
-url: 'http://localhost:8000'
+url: 'http://localhost:4000'
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
