@@ -117,4 +117,4 @@ if __name__ == '__main__':
 - Batch insert is much faster than separate insert for each record. You can tweak `batch_size` property in order to locate a sweet spot in performance.
 - psutil module is not required, it's just to visualize script memory consumption.
 
-All in all, it took -- minutes to import 10Gb of stackoverflow comments and used 25Mb of RAM only.
+All in all, it took 2 hours 18 minutes to import 10Gb of stackoverflow comments and used 25Mb of RAM only. Great results!
