@@ -19,7 +19,7 @@ language: en
 timezone: Europe/Moscow
 
 # URL
-url: 'http://localhost:4000'
+url: 'https://mikemadisonweb.github.io'
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
