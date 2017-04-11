@@ -1,7 +1,7 @@
 menu:
     Blog: /
     Archive: /archives/
-    About: https://github.com/mikemadisonweb
+    About: /resume/
 
 favicon: /favicon_tree.png
 logo: /favicon_tree.png

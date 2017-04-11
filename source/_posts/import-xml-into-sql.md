@@ -52,15 +52,16 @@ XPath provide a lot of flexibility, this time we are not limited with specific X
 - As you can see XML field type can't be directly converted to integer. You need a intermediate conversion to text.
 - Your dump shoudn't have BOM. You should [remove it](http://www.linuxask.com/questions/how-to-remove-bom-from-utf-8) before running import otherwise you'll receive an error.
 
-Import on 10GB dump took minutes and basically loads the whole file into memory in order to work.
+And the most important one: it fails on large XML files: `ERROR:  requested length too large`. So we either need to split our file on smaller pieces or use different approach.
 
 ### Import using Python
-Basically, until now we either had formatting restrictions either getting run out of memory pretty fast. The key in succeeding controlling the whole process is to write your own external script. Obviously, you can't beat above solutions in execution time, but you definitely can reduce memory consumption. 
+The key in succeeding controlling the whole process is to write your own external script. Obviously, you can't beat above solutions in execution time, but you definitely can reduce memory consumption. 
 
 I used Python 3, lxml module to process dump and psycopg2 for the database connection. With my naive approach at first I got really slow performance, some major improvements were needed. To save you time I will post my final solution and then point out the most important parts:
 ```python
 from lxml import etree
 import psycopg2
+from psycopg2.extras import execute_values
 import datetime
 import os
 import psutil
@@ -86,29 +87,20 @@ def import_xml(filename, connect, insert_command, batch = [], batch_size = 1000)
             del(element.getparent()[0])
         # Save batch to DB
         if count % batch_size == 0:
-            psycopg2.extras.execute_values(cursor, insert_command, batch)
+            execute_values(cursor, insert_command, batch)
             print("\033[?25lImported rows: {} | Memory usage: {}\r".format(count, sizeof_fmt(process.memory_info().rss)), sep='', end='', flush=True)
             batch = []
     # Save the rest
     if len(batch):
-        psycopg2.extras.execute_values(cursor, insert_command, batch)
+        execute_values(cursor, insert_command, batch)
 
-def import_dump(db_name = 'stackoverflow', db_host = 'postgres-db', db_user = 'postgres', db_pass = '', db_table = 'comments'):
+def import_dump(db_name = 'fts', db_host = 'postgres-db', db_user = 'postgres', db_pass = '', db_table = 'comments'):
     filename = '/dump/Comments.xml'
     start_date = datetime.datetime.now()
     print ("Import data from {}".format(filename))
     connect = psycopg2.connect(database=db_name, user=db_user, host=db_host, password=db_pass)
     connect.autocommit = True
     cursor = connect.cursor()
-    create_command = '''CREATE TABLE IF NOT EXISTS {} (
-                          Id serial PRIMARY KEY,
-                          PostId VARCHAR(255) NOT NULL,
-                          Score VARCHAR(255) NOT NULL,
-                          Text TEXT NULL,
-                          CreationDate DATE NOT NULL,
-                          UserId VARCHAR(255) NULL
-                      )'''.format(db_table)
-    cursor.execute(create_command)
 
     insert_command = 'INSERT INTO {} (PostId, Score, Text, CreationDate, UserId) VALUES %s'.format(db_table)
     import_xml(filename, connect, insert_command)

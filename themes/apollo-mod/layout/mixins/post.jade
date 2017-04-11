@@ -13,6 +13,8 @@ mixin postDate(item)
 
 //- Index Page
 mixin posts()
+    div.post-img-container
+        img.post-img(src='/images/tree3.jpg')
     div.fixed-width
         ul.home.post-list
             - page.posts.each(function (item) {
@@ -30,6 +32,8 @@ mixin posts()
 
 //- Archive Page
 mixin postList()
+    div.post-img-container
+        img.post-img(src='/images/archive.jpg')
     .archive
         - var year = new Date().getFullYear();
         - var change = false;

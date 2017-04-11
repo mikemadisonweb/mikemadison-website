@@ -14,9 +14,9 @@
 
 .post-block {
     .post-title {
-        margin: 0.65em 0;
-        color: #2c3e50;
-        font-size: 1.8em;
+        margin: 0.65em 0 0.2em;
+        color: #34495e;
+        font-size: 1.65em;
 
         .pre-title {
             color: #93a29b;
@@ -25,7 +25,7 @@
 
     .post-date {
         color: #7f8c8d;
-        margin: 1.1em 0;
+        margin: 0.55em 0 1.1em;
 
         span {
             margin-left: 0.5rem;
@@ -39,7 +39,7 @@
         padding: 4px 12px;
         border-radius: 4px;
         border-bottom: 4px solid #3c8260;
-        font-size: 0.85em;
+        font-size: 0.7em;
         color: #fff;
         background-color: #6aa573;
         margin: 0 5px 0.65em;
