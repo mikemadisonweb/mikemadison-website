@@ -1,6 +1,5 @@
 .copyright
     - var hexoURL = "https://hexo.io/";
-    - var apolloURL = "https://github.com/pinggod/hexo-theme-apollo";
     - var currentDate = new Date();
     - var year = currentDate.getFullYear();
     - year = year == theme.startyear ? year : theme.startyear + ' - ' + year;
@@ -8,4 +7,6 @@
         a(href="/atom.xml")
             img.rss-icon(src="/images/rss_ico.png")
             span  Feed |
+        a(href="/sitemap.xml")
+            span  Sitemap |
         span  © #{year} #[a(href=config.url)!= config.author], powered by #[a(href=hexoURL, target="_blank") Hexo].

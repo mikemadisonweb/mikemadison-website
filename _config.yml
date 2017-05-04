@@ -34,6 +34,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
   - resume/**
+  - google98bbbbfec3d27fb1.html
 image_dir: assets
 
 # Writing
