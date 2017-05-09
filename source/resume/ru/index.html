@@ -4,14 +4,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,requiresActiveX=true">
-	<title>Добрый день :: Это моё резюме :: Бакулин Михаил Вячеславович :: Веб-разработчик (Back End Developer)</title>
+	<title>Добрый день :: Это моё резюме :: Бакулин Михаил Вячеславович :: Веб-разработчик (Backend Developer)</title>
 	<meta name="description" content="Resume Bakulin Mikhail Web Developer PHP Back End">
 	<!-- /// Favicons ////////  -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144-precomposed.png">
-	<link rel="shortcut icon" href="favicon.png">
+	<link rel="shortcut icon" href="../favicon.png">
 	<!-- /// Template CSS ////////  -->
-	<link rel="stylesheet" href="assets/css/all.min.css">
-	<link rel="stylesheet" href="fontawesome/font-awesome.min.css">
+	<link rel="stylesheet" href="../assets/css/all.min.css">
+	<link rel="stylesheet" href="../fontawesome/font-awesome.min.css">
 	<!-- /// Google Fonts ////////  -->
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
 </head>
@@ -22,10 +21,10 @@
 		<div class="row cv-section">
 			<div class="span9">
 				<div class="cv-section-title">
-					<img width="140" height="140" src="assets/img/ava/resume2_cropped.jpg" alt="">
+					<img width="140" height="140" src="../assets/img/ava/resume2_cropped.jpg" alt="">
 					<h1>
 						Бакулин Михаил Вячеславович
-						<small>Веб-разработчик (Back End Developer)</small>
+						<small>Веб-разработчик (Backend Developer)</small>
 					</h1>
 				</div>
 			</div>
@@ -52,7 +51,7 @@
 						Город: Москва<br>
 						Эл. почта: <a href="mailto:mikemadweb@gmail.com">mikemadweb@gmail.com</a><br>
 						Телефон: 8 (926) 864-16-78<br>
-						<a href="http://mikemadison.site">http://mikemadison.site</a>
+						<a href="https://mikemadisonweb.github.io">https://mikemadisonweb.github.io</a>
 					</h5>
 				</div>
 			</div>
@@ -93,10 +92,9 @@
 					<p>5 лет</p>
 					<ul class="fill-circle">
 						<li><h4>>=5.3, 7.0</h4></li>
-						<li><h4>Фреймворки: Symfony (^2.7, ^3.0), Silex</h4></li>
+						<li><h4>Фреймворки: Symfony (^2.7, ^3.0), Yii2</h4></li>
 						<li><h4>Система контроля версий: Git (Git flow)</h4></li>
-						<li><h4>Тестирование: PhpUnit, Mockery, SQLite</h4></li>
-						<li><h4>Локальное окружение: Vagrant, Ansible, Deployer</h4></li>
+						<li><h4>Тестирование: Codeception, PhpUnit, Mockery</h4></li>
 						<li><h4>Принципы: SOLID, KISS, DRY</h4></li>
 						<li><h4>Код-стайл: PSR</h4></li>
 					</ul>
@@ -107,14 +105,14 @@
 					<p>5 лет</p>
 					<ul class="fill-circle">
 						<li><h4>Реляционные: PostgreSQL, MySQL</h4></li>
-						<li><h4>"Ключ-значение": Redis</h4></li>
+						<li><h4>"Ключ-значение": Redis, Memcached</h4></li>
 					</ul>
 				</div>
 
 				<div class="cv-item fixed">
 					<h2><strong>Javascript</strong></h2>
 					<p>4 года</p>
-					<h4>Browserify, CommonJS, Gulp, Ajax, JQuery, Lo-Dash</h4>
+					<h4>NodeJS, ReactJS, Webpack, ES6</h4>
 				</div>
 
 				<div class="cv-item fixed">
@@ -123,9 +121,30 @@
 					<h4>Responsive Web Development, HTML5 Boilerplate, SASS, SEO, Bootstrap</h4>
 				</div>
 
+				<div class="cv-item fixed">
+					<h2><strong>DevOps</strong></h2>
+					<ul class="fill-circle">
+						<li><h4>Локальное окружение: Docker, ранее - Vagrant, Ansible</h4></li>
+					</ul>
+				</div>
+
+				<div class="cv-item fixed">
+					<h2><strong>Системы обмена сообщениями</strong></h2>
+					<ul class="fill-circle">
+						<li><h4>RabbitMQ, Gearman</h4></li>
+					</ul>
+				</div>
+
+				<div class="cv-item fixed">
+					<h2><strong>Полнотекстовый поиск</strong></h2>
+					<ul class="fill-circle">
+						<li><h4>Elasticsearch, Sphinx</h4></li>
+					</ul>
+				</div>
+
 				<div class="cv-item">
 					<h2><strong>А также</strong></h2>
-					<h4>Ubuntu, Z shell, PhpStorm, XDebug, BlackFire, Python</h4>
+					<h4>Python, XDebug, BlackFire, Ubuntu, Z shell, PhpStorm</h4>
 				</div>
 			</div>
 		</div>
@@ -140,7 +159,25 @@
 				<div class="cv-item">
 					<ul class="portfolio-items fixed no-print">
 						<li class="item term-1">
-							<img src="assets/img/portfolio/resh.png" alt="">
+							<img src="../assets/img/portfolio/terminal.png" alt="">
+						</li>
+					</ul>
+					<h3><strong><a href="#">Терминал ТАСС</a></strong></h3>
+					<ul class="fill-circle">
+						<li>Система продаж и распространения</li>
+						<li>Real-time приложение для подписчиков на новостные ленты</li>
+						<li>Бекенд спроектирован с нацеленностью на сервисно-ориентированную архитектуру</li>
+						<li>Бекенд и фронтенд разнесены, всё взаимодействие происходит через API</li>
+						<li>Добавление в поисковый индекс текста материала, автоматическая категоризация и тегирование производится через очереди</li>
+						<li>Допустимая задержка с момента выхода новости и получения её подписчиком составляет несколько секунд</li>
+						<li>Пользователь получает новостные обновления через websocket</li>
+						<li>В разработке</li>
+					</ul>
+				</div>
+				<div class="cv-item">
+					<ul class="portfolio-items fixed no-print">
+						<li class="item term-1">
+							<img src="../assets/img/portfolio/resh.png" alt="">
 						</li>
 					</ul>
 					<h3><strong><a href="#">Российская электронная школа</a></strong></h3>
@@ -155,13 +192,13 @@
 						<li>Простое API для получения списка загруженных видео и информации о них</li>
 						<li>Логирование информации о потраченном на конвертацию времени и свободной оперативной памяти</li>
 						<li>Извлечение структурированной информации о тестах(XML, IMS QTI), содержащихся в уроке, построение на основе неё модели данных для тестов</li>
-						<li>В разработке</li>
+						<li>В данный момент находится в апробации у региональных школ</li>
 					</ul>
 				</div>
 				<div class="cv-item">
 					<ul class="portfolio-items fixed no-print">
 						<li class="item term-2">
-							<img src="assets/img/portfolio/photobank.png" alt="">
+							<img src="../assets/img/portfolio/photobank.png" alt="">
 						</li>
 					</ul>
 					<h3><strong><a href="http://photobank.rgo.ru/">Фотобанк РГО</a></strong></h3>
@@ -177,7 +214,7 @@
 				<div class="cv-item">
 					<ul class="portfolio-items fixed no-print">
 						<li class="item term-3">
-							<img src="assets/img/portfolio/window1.png" alt="">
+							<img src="../assets/img/portfolio/window1.png" alt="">
 						</li>
 					</ul>
 					<h3><strong><a href="http://window.edu.ru/">window.edu.ru</a></strong></h3>
@@ -188,58 +225,6 @@
 						<li>Решено было переделать сайт с нуля</li>
 						<li>Кэширование и оптимизация запросов</li>
 						<li>Полнотекстовый поиск на ElasticSearch</li>
-					</ul>
-				</div>
-				<div class="cv-item">
-					<ul class="portfolio-items fixed no-print">
-						<li class="item term-4">
-							<img src="assets/img/portfolio/School_collection2.png" alt="">
-						</li>
-					</ul>
-					<h3><strong><a href="http://school-collection.edu.ru/">school-collection.edu.ru</a></strong>
-					</h3>
-					<ul class="fill-circle">
-						<li>База образовательных ресурсов для школьников и учителей</li>
-						<li>Рефакторинг самодельного написанной в компании CMS</li>
-						<li>Добавление новой вёрстки и переработка пользовательских интерфейсов без изменения
-							разметки
-						</li>
-					</ul>
-				</div>
-				<div class="cv-item">
-					<ul class="portfolio-items fixed no-print">
-						<li class="item term-5">
-							<img src="assets/img/portfolio/Vlager.png" alt="">
-						</li>
-					</ul>
-					<h3><strong><a href="http://vlager.edu.ru/">Детский отдых</a></strong></h3>
-					<ul class="fill-circle">
-						<li>База детских летних лагерей</li>
-						<li>Первый сайт на Symfony2</li>
-						<li>Развитие функицонала проекта</li>
-						<li>К статичному сайту были добавлены регистрация и личные кабинеты</li>
-					</ul>
-				</div>
-				<div class="cv-item">
-					<ul class="portfolio-items fixed no-print">
-						<li class="item term-6">
-							<img src="assets/img/portfolio/ISAN1.png" alt="">
-						</li>
-					</ul>
-					<h3><strong><a href="http://isan.troitsk.ru/ru/">ISAN</a></strong></h3>
-					<ul class="fill-circle">
-						<li>Сайт Института спектроскопии РАН</li>
-						<li>С помощью парсинга составлена крупная база данных сотрудников и научных публикаций</li>
-						<li>У каждого сотрудника есть личный кабинет с возможностью редактировать личные данные,
-							добавлять публикации, пользоваться веб-почтой и менять пароль
-						</li>
-						<li>CMS с возможностью редактировать содержимое сайта прямо на странице, с обновлением базы
-							данных через AJAX
-						</li>
-						<li>Возможность добавлять новости и объявления</li>
-						<li>Возможность раздавать привелегии на редактирование разделов сайта и информации на нём
-						</li>
-						<li>Адаптивный вёрстка</li>
 					</ul>
 				</div>
 			</div>
@@ -253,19 +238,28 @@
 			</div>
 			<div class="span9">
 				<div class="cv-item">
-					<p class="period">Сентябрь 2014 - н/в</p>
+					<p class="period">Сентябрь 2016 - н/в</p>
+					<h3><strong>Старший разработчик</strong></h3>
+					<h4>ТАСС</h4>
+					<br>
+					<p>Функционал:</p>
+					<ul class="fill-circle">
+						<li>Участие в проектировании и создании новых приложений компании с использованием сервисно-ориентированного подхода</li>
+						<li>Разработка сервисов на основе фреймворка Yii2</li>
+						<li>Код-ревью и помощь сотрудникам младшего уровня</li>
+						<li>Документирование технческих решений в Confluence</li>
+					</ul>
+				</div>
+				<div class="cv-item">
+					<p class="period">Сентябрь 2014 - Сентябрь 2016</p>
 					<h3><strong>PHP разработчик</strong></h3>
 					<h4>ФГАУ ГНИИ ИТТ «Информика», Отдел прикладного программного обеспечения</h4>
 					<br>
 					<p>Функционал:</p>
 					<ul class="fill-circle">
-						<li>Разработка web-приложений и сервисов компании на базе фреймворка
-							Symfony
-						</li>
+						<li>Разработка web-приложений и сервисов компании на базе фреймворка Symfony</li>
 						<li>Участие в обсужнении и создании архитектуры проектов</li>
-						<li>Рефакторинг проблемных мест, в рамках исправления ошибки или разработки нового
-							функционала
-						</li>
+						<li>Рефакторинг проблемных мест</li>
 						<li>Код-ревью. Доработка своего кода и высказывание предложений по чужому</li>
 						<li>Написание проектной документации</li>
 					</ul>
@@ -356,9 +350,9 @@
 	<i class="fa fa-print"></i>
 </a>
 
-<a id="pdf" class="no-print" href="pdf/BakulinMV_Resume_PHP_Developer_2016.pdf" title="Скачать в формате .pdf">
+<a id="pdf" class="no-print" href="../pdf/BakulinMV_Resume_PHP_Developer_2016.pdf" title="Скачать в формате pdf">
 	<i class="fa fa-download"></i>
 </a>
-<script src="assets/js/all.min.js"></script>
+<script src="../assets/js/all.min.js"></script>
 </body>
 </html>
