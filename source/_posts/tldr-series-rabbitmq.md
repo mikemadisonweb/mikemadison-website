@@ -63,6 +63,7 @@ In terms of the algorithm used to route a message four types of exchanges exists
 - __Fanout__ : The message is cloned and sent to all queues connected to this exchange. Routing key is ignored.
 - __Topic__ : Using wildcards the message can be routed to some of the connected queues.
 - __Headers__ : Attributes used for routing are taken from the header values, not routing key.
+
 You can find a really good visual representation of exchange types [here](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_MRG/1.1/html/Messaging_User_Guide/chap-Messaging_User_Guide-Exchanges.html#sect-Messaging_User_Guide-Exchanges-Exchange_Types).
 On declaring an exchange you should define a name and type as it is mandatory, there is a bunch of optional parameters though:
 - __passive__ : If set to true, server would not raise error when exchange already exists.
