@@ -1,13 +1,15 @@
 ---
-title: TL;DR Series - RabbitMQ
+title: TL;DR Series - RabbitMQ introduction
 date: 2017-05-04
 featured_image: tldr-series-rabbitmq.jpeg
+desc: Concise introduction to the most significant RabbitMQ terms
+keywords: rabbitmq amqp queue exchange connection message broker protocol vhost binding routing consumer publisher
 tags:
 - RabbitMQ
 - AMQP
 ---
 Yet another RabbitMQ introduction. If you are looking for an article about RabbitMQ, there are plenty of them and most of them are really good. Nevertheless, I decided to make my own contribution. So considering an amount of information out there about RabbitMQ, what makes this article different? I will try to keep it short, meaningful and practical while not falling into a bottomless pit of details. I do not mean that there are something that is not worth to know about, just let's try it this way. Consider it as TL;DR for the topic.
-
+<!--more-->
 # Why you might need it
 If you planning to increase the complexity of your app, you should have very strong reasons behind it. Otherwise, it can be an overkill. That's when you probably should consider using RabbitMQ:
 - If you need more flexibility. Your little services can talk to each other through RabbitMQ. It decouples your code and provides ability to write services in different programming languages.

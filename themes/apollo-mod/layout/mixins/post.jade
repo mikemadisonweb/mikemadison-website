@@ -27,7 +27,7 @@ mixin posts()
                         +postDate(item)
                         .post-content
                             != item.excerpt
-                        a.read-more(href= url_for(item.path))!= __('more')
+                        a.read-more(href= url_for(item.path))!= ('Continue reading')
             - })
 
 //- Archive Page

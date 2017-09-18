@@ -5,7 +5,8 @@ title
     block site_title
         = config.title
 block description
-    meta(name="description", content= config.description ? config.description : '')
+    meta(name="description", content= config.description ? config.description : "")
+    meta(name="keywords" content="web development blog")
     meta(property="og:description" content="This is my blog about web development. Please leave a comment or check out RSS feed.")
     meta(property="og:image" content="")
     meta(property="og:title" content="Blog about web development | Mikhail Bakulin")
@@ -19,4 +20,11 @@ link(rel="stylesheet", href=url_for("css/apollo.css"))
 
 - var xml = config.url + '/atom.xml'
     link(rel="search", type="application/opensearchdescription+xml", href=xml, title=config.title)
-    
+
+// Global Site Tag (gtag.js) - Google Analytics
+script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-106650807-1')
+script.
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+  gtag('config', 'UA-106650807-1');
