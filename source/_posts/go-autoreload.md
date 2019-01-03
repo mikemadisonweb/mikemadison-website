@@ -1,6 +1,6 @@
 ---
 title: Running Golang applications inside Docker containers with auto reload
-date: 2018-03-06
+date: 2018-03-06 12:00:00
 featured_image: go-autoreload.jpeg
 desc: Automatically reload, refresh and recompile Go programs within Docker containers
 keywords: golang realize docker container

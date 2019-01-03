@@ -1,6 +1,6 @@
 ---
 title: TL;DR Series - RabbitMQ introduction
-date: 2017-05-04
+date: 2017-05-04 12:00:00
 featured_image: tldr-series-rabbitmq.jpeg
 desc: Concise introduction to the most significant RabbitMQ terms
 keywords: rabbitmq amqp queue exchange connection message broker protocol vhost binding routing consumer publisher

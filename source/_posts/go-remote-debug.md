@@ -1,6 +1,6 @@
 ---
 title: How to debug Golang applications inside Docker containers using Delve
-date: 2018-06-14
+date: 2018-06-14 12:00:00
 featured_image: go-remote-debug.jpg
 desc: Remote debugging Go programs within Docker containers from your favorite IDE (Goland, of course)
 keywords: golang delve goland docker container
