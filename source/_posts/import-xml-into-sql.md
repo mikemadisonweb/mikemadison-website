@@ -1,6 +1,6 @@
 ---
 title: Import XML file into database
-date: 2017-01-08
+date: 2017-01-08 12:00:00
 featured_image: import-xml-into-sql.jpeg
 desc: Comparison between different methods of loading huge XML file into database
 keywords: mysql postgresql xml python sql

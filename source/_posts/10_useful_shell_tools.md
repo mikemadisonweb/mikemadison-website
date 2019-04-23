@@ -1,6 +1,6 @@
 ---
 title: 10 useful shell tools to boost web developer workflow
-date: 2017-09-18
+date: 2017-09-18 12:00:00
 featured_image: 10_useful_shell_tools.jpg
 desc: The most useful commands for a software engineer, based on my experience
 keywords: unix shell bash zsh head tail sed gnomon grep jq make awk curl oh-my-zsh

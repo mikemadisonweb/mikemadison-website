@@ -36,6 +36,7 @@ mixin postList()
         img.post-img(src='/images/archive.jpg')
     .archive
         - var year = new Date().getFullYear();
+        - var currentYear = year;
         - var change = false;
         h1.archive-title
             - if (typeof(page.tag) !== 'undefined') {
@@ -45,9 +46,10 @@ mixin postList()
             -}
         - page.posts.each(function (item) {
             - var itemYear = date(item.date, 'YYYY') - 0;
-            - change = year !== itemYear;
+            - change = currentYear !== itemYear;
             if change
-                h2.archive-year!= year
+                h2.archive-year!= itemYear
+                - currentYear = itemYear
             .post-item
                 +postDate(item)
                 .post-title-link
