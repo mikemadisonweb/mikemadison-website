@@ -72,3 +72,4 @@ pagination_dir: page
 deploy:
   type: git
   repo: https://github.com/mikemadisonweb/mikemadisonweb.github.io
+

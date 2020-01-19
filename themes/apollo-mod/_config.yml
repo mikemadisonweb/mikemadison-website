@@ -1,7 +1,7 @@
 menu:
-    Blog: /
-    Archive: /archives/
-    About: /cv/
+  Blog: /
+  Archive: /archives/
+  About: /cv/
 
 favicon: /favicon_tree.png
 logo: /favicon_tree.png
@@ -16,3 +16,16 @@ ga: ~
 
 # Copyright Infomation
 startyear: 2016
+
+mermaid:
+  enable: true
+  version: "8.4.4"
+  options:
+    startOnLoad: true
+    theme: forest
+    fontFamily: "sourcesanspro, Helvetica Neue, Arial, sans-serif"
+    logLevel: 3
+    sequence:
+      showSequenceNumbers: true
+      useMaxWidth: true
+      actorFontFamily: "sourcesanspro, Helvetica Neue, Arial, sans-serif"

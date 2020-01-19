@@ -1,0 +1,10 @@
+//- LaTex
+script(async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous")
+
+if theme.mermaid.enable === true
+    script(src='//unpkg.com/mermaid@' + theme.mermaid.version + '/dist/mermaid.min.js' + '?v=' + theme.version id="maid-script" mermaidoptioins=theme.mermaid.options)
+    script.
+        if (window.mermaid) {
+            var options = JSON.parse(document.getElementById('maid-script').getAttribute('mermaidoptioins'));
+            mermaid.initialize(options);
+        }

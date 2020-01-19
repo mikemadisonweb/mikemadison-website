@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pinggod/hexo-theme-apollo"
+    "url": "//github.com/pinggod/hexo-theme-apollo"
   },
   "keywords": [
     "hexo",
@@ -18,9 +18,9 @@
   "author": "Sean Sun",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pinggod/hexo-theme-apollo/issues"
+    "url": "//github.com/pinggod/hexo-theme-apollo/issues"
   },
-  "homepage": "https://github.com/pinggod/hexo-theme-apollo#readme",
+  "homepage": "//github.com/pinggod/hexo-theme-apollo#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
