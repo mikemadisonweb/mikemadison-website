@@ -38,7 +38,7 @@ In this form, it could be used by the client to prove his identity. The general 
  - pass as a cookie, like a usual stateful session ID
  - pass between distributed RESTful APIs as an HTTP header
  
-It is important to note that JWS implementation is signed and encoded but not encrypted anyhow. That way, the payload of the token could be easily read by all of the participants. If a malicious user would try to tamper the content, the token would be rejected by the server as it would not match the signature anymore.
+It is important to note that JWS implementation is signed and encoded but not encrypted anyhow. That way, the payload of the token could be easily read by all of the participants. However, if a malicious user would try to tamper the content, the token would be rejected by the server as it would not match the signature anymore.
 
 ## JSON Web Encoding (JWE)
 The JWE scheme encrypts the content instead of signing it. That way it guarantees confidentiality. 
@@ -96,7 +96,7 @@ sequenceDiagram
 ## Security-related considerations
 Things that need to be done always:
  - Both headers and payload must be signed.
- - Choose a strong algorithm. The worst case is 'None', which means the signature will not be checked. One should prefer 'HS***' to 'RS***' algorithms, if possible.
+ - Choose a strong algorithm. The worst case is 'None', which means the signature will not be checked. One should prefer 'HS\*\*\*' to 'RS\*\*\*' algorithms, if possible.
  - Store it properly on the client-side. The only good practice is to store it in a cookie, with usual restrictions like path, scope, etc.
  - Don't put sensitive data in the JWS payload. These include passwords, since headers and payload are only base64encoded and not encrypted, so everyone can decode the content of JWT to get its cleartext data. Use JWE if sensitive data transmission is necessary.
  - Use HTTPS for all of the requests.

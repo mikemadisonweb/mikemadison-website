@@ -15,7 +15,7 @@ This particular article would be devoted to network failure simulation during th
 
 To tell the truth we tend to forget about poor network conditions which could lead to various quirks in your application's behavior and the reason is simple. The internet connection in the office is blazingly fast for you, your QA department colleagues and your management. Maybe sometimes you are checking your application from home, where you also have a fiber connection but have you ever tested it from the basement of the building located on the outskirts of the city, in the middle of the forest or on the top of the mountain? Well, whether you like it or not, your users would use your application from such places. This problem gains more and more relevance as the users prefer their smartphones over desktops.
 
-The first part of the article the types and the root causes of the network issues would be described in great detail, but if you are looking for practical guidance feel free to skip to the next section straight away, where a number of open-source software solutions for different platforms would be provided. In the last part, a demo application would be used to check one of these tools in action.
+The first part of the article the types and the root causes of the network issues would be described in great detail, but if you are looking for practical guidance feel free to skip to the next section straight away, where a number of open-source software solutions for different platforms would be provided.
 
 ## Network performance metrics
 Even if you are already familiar with the terms that are used as network performance metrics, it still could be nice to revive and refresh your memory. Let's cover the most significant terms one by one.
@@ -77,7 +77,7 @@ You can select one of predefined network profile or create your own specifying t
 #### MacOS and iOS - Network link conditioner
 This is a native utility written by Apple, but unfortunately, it is not provided out-of-the-box. First I would explain how to install it on MacOS. You need to login to [Downloads for Apple Developers](https://developer.apple.com/download/more/?q=Additional%20Tools) website and download the "Additional Tools for Xcode" package. Download the latest version and execute the .dmg file. In the new window appearing on the screen go to the "Hardware" directory and double-click "Network Link Condition.prefPane". Now as it is installed you can find it in "System preferences" or just using Spotlight search.
 ![network link conditioner 1](nlc_mac.png)
-The utility would enable the selected network profile system-wide. There is a bunch of presets and os course a possibility to create your own. You can specify a download, upload and DNS latencies along with the package loss values.
+The utility would enable the selected network profile system-wide. There is a bunch of presets and of course a possibility to create your own. You can specify a download, upload and DNS latencies along with the package loss values.
 ![network link conditioner 2](nlc_mac_2.png)
 Just don't forget to disable it after the test!
 
