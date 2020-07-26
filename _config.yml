@@ -71,5 +71,5 @@ pagination_dir: page
 # Deployment
 deploy:
   type: git
-  repo: git@github.com:mikemadisonweb/mikemadison-website.git
+  repo: git@github.com:mikemadisonweb/mikemadisonweb.github.io.git
 
